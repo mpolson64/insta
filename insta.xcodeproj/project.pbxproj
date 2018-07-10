@@ -17,6 +17,7 @@
 		E87BD0E620F41E2F0067C6AE /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0E520F41E2F0067C6AE /* FeedViewController.m */; };
 		E87BD0E920F427AA0067C6AE /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0E820F427AA0067C6AE /* ComposeViewController.m */; };
 		E87BD0ED20F42A490067C6AE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0EC20F42A490067C6AE /* Post.m */; };
+		E87BD0F720F4389D0067C6AE /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0F620F4389D0067C6AE /* PostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		E87BD0E820F427AA0067C6AE /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		E87BD0EB20F42A490067C6AE /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		E87BD0EC20F42A490067C6AE /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		E87BD0F520F4389D0067C6AE /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		E87BD0F620F4389D0067C6AE /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 		E87BD0C620F412A60067C6AE /* insta */ = {
 			isa = PBXGroup;
 			children = (
+				E87BD0EE20F438170067C6AE /* views */,
 				E87BD0EA20F42A2F0067C6AE /* models */,
 				E87BD0E020F417990067C6AE /* controllers */,
 				E87BD0C720F412A60067C6AE /* AppDelegate.h */,
@@ -124,6 +128,15 @@
 				E87BD0EC20F42A490067C6AE /* Post.m */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		E87BD0EE20F438170067C6AE /* views */ = {
+			isa = PBXGroup;
+			children = (
+				E87BD0F520F4389D0067C6AE /* PostCell.h */,
+				E87BD0F620F4389D0067C6AE /* PostCell.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,10 +233,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-insta/Pods-insta-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -241,6 +260,7 @@
 				E87BD0ED20F42A490067C6AE /* Post.m in Sources */,
 				E87BD0D720F412A70067C6AE /* main.m in Sources */,
 				E87BD0E620F41E2F0067C6AE /* FeedViewController.m in Sources */,
+				E87BD0F720F4389D0067C6AE /* PostCell.m in Sources */,
 				E87BD0E920F427AA0067C6AE /* ComposeViewController.m in Sources */,
 				E87BD0C920F412A60067C6AE /* AppDelegate.m in Sources */,
 			);
