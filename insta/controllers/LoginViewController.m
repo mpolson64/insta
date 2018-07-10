@@ -40,6 +40,18 @@
             [self presentViewController:alert animated:YES completion:nil];
         } else {
             NSLog(@"User registered successfully");
+            [PFUser logInWithUsernameInBackground:self.usernameField.text password:self.passwordField.text block:^(PFUser * user, NSError *  error) {
+                if (error) {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:(UIAlertControllerStyleAlert)];
+                    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+                    [alert addAction:okAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                } else {
+                    NSLog(@"User logged in successfully");
+                    
+                    [self performSegueWithIdentifier:@"loginAccepted" sender:nil];
+                }
+            }];
         }
     }];
 }
@@ -57,7 +69,7 @@
         } else {
             NSLog(@"User logged in successfully");
             
-            [self performSegueWithIdentifier:@"toChat" sender:nil];
+            [self performSegueWithIdentifier:@"loginAccepted" sender:nil];
         }
     }];
 }

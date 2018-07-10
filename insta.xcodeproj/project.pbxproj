@@ -14,6 +14,9 @@
 		E87BD0D420F412A70067C6AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87BD0D220F412A70067C6AE /* LaunchScreen.storyboard */; };
 		E87BD0D720F412A70067C6AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0D620F412A70067C6AE /* main.m */; };
 		E87BD0E320F417E30067C6AE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0E220F417E30067C6AE /* LoginViewController.m */; };
+		E87BD0E620F41E2F0067C6AE /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0E520F41E2F0067C6AE /* FeedViewController.m */; };
+		E87BD0E920F427AA0067C6AE /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0E820F427AA0067C6AE /* ComposeViewController.m */; };
+		E87BD0ED20F42A490067C6AE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E87BD0EC20F42A490067C6AE /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,12 @@
 		E87BD0D620F412A70067C6AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E87BD0E120F417E30067C6AE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E87BD0E220F417E30067C6AE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E87BD0E420F41E2F0067C6AE /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		E87BD0E520F41E2F0067C6AE /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		E87BD0E720F427AA0067C6AE /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		E87BD0E820F427AA0067C6AE /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		E87BD0EB20F42A490067C6AE /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		E87BD0EC20F42A490067C6AE /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +91,7 @@
 		E87BD0C620F412A60067C6AE /* insta */ = {
 			isa = PBXGroup;
 			children = (
+				E87BD0EA20F42A2F0067C6AE /* models */,
 				E87BD0E020F417990067C6AE /* controllers */,
 				E87BD0C720F412A60067C6AE /* AppDelegate.h */,
 				E87BD0C820F412A60067C6AE /* AppDelegate.m */,
@@ -99,8 +109,21 @@
 			children = (
 				E87BD0E120F417E30067C6AE /* LoginViewController.h */,
 				E87BD0E220F417E30067C6AE /* LoginViewController.m */,
+				E87BD0E420F41E2F0067C6AE /* FeedViewController.h */,
+				E87BD0E520F41E2F0067C6AE /* FeedViewController.m */,
+				E87BD0E720F427AA0067C6AE /* ComposeViewController.h */,
+				E87BD0E820F427AA0067C6AE /* ComposeViewController.m */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		E87BD0EA20F42A2F0067C6AE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E87BD0EB20F42A490067C6AE /* Post.h */,
+				E87BD0EC20F42A490067C6AE /* Post.m */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E87BD0E320F417E30067C6AE /* LoginViewController.m in Sources */,
+				E87BD0ED20F42A490067C6AE /* Post.m in Sources */,
 				E87BD0D720F412A70067C6AE /* main.m in Sources */,
+				E87BD0E620F41E2F0067C6AE /* FeedViewController.m in Sources */,
+				E87BD0E920F427AA0067C6AE /* ComposeViewController.m in Sources */,
 				E87BD0C920F412A60067C6AE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
