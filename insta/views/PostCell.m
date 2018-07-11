@@ -27,8 +27,9 @@
     self.postImageView.file = post.image;
     [self.postImageView loadInBackground];
     
-//    self.nameLabel.text = post.author.username;
+    self.nameLabel.text = [NSString stringWithFormat:@"@%@", post.author.username];
     self.captionLabel.text = post.caption;
+    self.likesLabel.text = [NSString stringWithFormat:@"%@ likes", post.likeCount];
 }
 
 @end

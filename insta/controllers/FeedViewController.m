@@ -59,6 +59,7 @@
 
 - (void)loadData:(UIRefreshControl *)refreshControl {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey:@"author"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     
