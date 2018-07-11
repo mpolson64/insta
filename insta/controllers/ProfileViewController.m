@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "HeaderCollectionReusableView.h"
 #import "PostCollectionViewCell.h"
+#import "PostViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -69,14 +70,16 @@
     return cell;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Pass the selected object to the new view controller. if([sender isKindOfClass:[PostCell class]]) {
+    PostViewController *postViewController = [segue destinationViewController];
+    postViewController.post = self.posts[[self.collectionView indexPathForCell:sender].item];
 }
-*/
+
 
 @end

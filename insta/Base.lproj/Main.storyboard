@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASC-FH-TcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="1462.2188905547227"/>
+            <point key="canvasLocation" x="1193" y="2256"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="ad4-zm-GpZ">
@@ -406,6 +406,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="postImageView" destination="WTs-Ve-73B" id="wxy-2o-gVh"/>
+                                    <segue destination="aIQ-k7-aHl" kind="show" id="346-2j-cEr"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -518,4 +519,7 @@
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="346-2j-cEr"/>
+    </inferredMetricsTieBreakers>
 </document>
