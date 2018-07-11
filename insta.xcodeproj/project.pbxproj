@@ -21,6 +21,7 @@
 		E8C0D9DD20F56E2800F68254 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9DC20F56E2800F68254 /* ProfileViewController.m */; };
 		E8C0D9E020F56E8A00F68254 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9DF20F56E8A00F68254 /* PostCollectionViewCell.m */; };
 		E8C0D9E320F57E7A00F68254 /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9E220F57E7A00F68254 /* HeaderCollectionReusableView.m */; };
+		E8C0D9E820F6847000F68254 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9E720F6847000F68254 /* PostViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		E8C0D9DF20F56E8A00F68254 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
 		E8C0D9E120F57E7A00F68254 /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		E8C0D9E220F57E7A00F68254 /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		E8C0D9E620F6847000F68254 /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		E8C0D9E720F6847000F68254 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				E87BD0E820F427AA0067C6AE /* ComposeViewController.m */,
 				E8C0D9DB20F56E2800F68254 /* ProfileViewController.h */,
 				E8C0D9DC20F56E2800F68254 /* ProfileViewController.m */,
+				E8C0D9E620F6847000F68254 /* PostViewController.h */,
+				E8C0D9E720F6847000F68254 /* PostViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				E87BD0E620F41E2F0067C6AE /* FeedViewController.m in Sources */,
 				E8C0D9E020F56E8A00F68254 /* PostCollectionViewCell.m in Sources */,
 				E87BD0F720F4389D0067C6AE /* PostCell.m in Sources */,
+				E8C0D9E820F6847000F68254 /* PostViewController.m in Sources */,
 				E87BD0E920F427AA0067C6AE /* ComposeViewController.m in Sources */,
 				E87BD0C920F412A60067C6AE /* AppDelegate.m in Sources */,
 			);

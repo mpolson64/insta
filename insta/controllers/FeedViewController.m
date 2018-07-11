@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "PostCell.h"
+#import "PostViewController.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,6 +27,7 @@
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    PFUser *asdf= PFUser.currentUser;
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(loadData:) forControlEvents:UIControlEventValueChanged];
@@ -75,14 +77,20 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([sender isKindOfClass:[PostCell class]]) {
+        PostViewController *postViewController = [segue destinationViewController];
+        postViewController.post = self.posts[[self.tableView indexPathForCell:sender].row];
+    }
+    
 }
-*/
+
 
 @end
