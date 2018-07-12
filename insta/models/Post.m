@@ -15,8 +15,6 @@
 @dynamic author;
 @dynamic caption;
 @dynamic image;
-@dynamic likeCount;
-@dynamic commentCount;
 @dynamic comments;
 @dynamic likedBy;
 
@@ -30,8 +28,6 @@
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
-    newPost.likeCount = [NSNumber numberWithUnsignedInteger:arc4random_uniform(100)];
-    newPost.commentCount = @(0);
     newPost.comments = [NSMutableArray new];
     newPost.likedBy = [NSMutableArray new];
 

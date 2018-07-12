@@ -310,6 +310,9 @@
                                                     </constraints>
                                                     <state key="normal" image="iconmonstr-favorite-2-240"/>
                                                     <state key="highlighted" image="iconmonstr-favorite-1-240"/>
+                                                    <connections>
+                                                        <action selector="onLike:" destination="mgm-kg-0We" eventType="touchUpInside" id="q1q-bq-UTI"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="float('inf') likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSL-Gf-NSW">
                                                     <rect key="frame" x="63" y="395.5" width="297" height="40"/>
@@ -619,6 +622,6 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="346-2j-cEr"/>
+        <segue reference="wCX-Ib-uxu"/>
     </inferredMetricsTieBreakers>
 </document>

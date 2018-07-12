@@ -29,7 +29,24 @@
     
     self.nameLabel.text = [NSString stringWithFormat:@"@%@", post.author.username];
     self.captionLabel.text = post.caption;
-    self.likesLabel.text = [NSString stringWithFormat:@"%@ likes", post.likeCount];
+    self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", post.likedBy.count];
+    
+    if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
+        [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];
+    } else {
+        [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
+    }
+}
+- (IBAction)onLike:(id)sender {
+    if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
+        self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count - 1];
+        [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
+        [self.post unlike:PFUser.currentUser.objectId];
+    } else {
+        self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count + 1];
+        [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];
+        [self.post like:PFUser.currentUser.objectId];
+    }
 }
 
 @end

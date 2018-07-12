@@ -48,13 +48,11 @@
 }
 
 - (IBAction)onLike:(id)sender {
-    NSLog(@"in");
     if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
         self.likeLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count - 1];
         [self.heartButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
         [self.post unlike:PFUser.currentUser.objectId];
     } else {
-        NSLog(@"unliking");
         self.likeLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count + 1];
         [self.heartButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];
         [self.post like:PFUser.currentUser.objectId];
