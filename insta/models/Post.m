@@ -18,6 +18,7 @@
 @dynamic likeCount;
 @dynamic commentCount;
 @dynamic comments;
+@dynamic likedBy;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -32,7 +33,8 @@
     newPost.likeCount = [NSNumber numberWithUnsignedInteger:arc4random_uniform(100)];
     newPost.commentCount = @(0);
     newPost.comments = [NSMutableArray new];
-    
+    newPost.likedBy = [NSMutableArray new];
+
     [newPost saveInBackgroundWithBlock: completion];
 }
 
@@ -54,6 +56,16 @@
 
 - (void)makeComment:(NSString *)comment withUsername:(NSString *)username {
     [self addObject:[NSString stringWithFormat:@"%@: %@", username, comment] forKey:@"comments"];
+    [self saveInBackground];
+}
+
+- (void)like:(NSString *)objectId {
+    [self addObject:objectId forKey:@"likedBy"];
+    [self saveInBackground];
+}
+
+- (void)unlike:(NSString *)objectId {
+    [self removeObject:objectId forKey:@"likedBy"];
     [self saveInBackground];
 }
 

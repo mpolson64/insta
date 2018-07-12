@@ -10,6 +10,7 @@
 #import "CommentsViewController.h"
 
 @interface PostViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *heartButton;
 
 @end
 
@@ -23,7 +24,12 @@
     
     self.nameLabel.text = [NSString stringWithFormat:@"@%@", self.post.author.username];
     self.captionLabel.text = self.post.caption;
-    self.likeLabel.text = [NSString stringWithFormat:@"%@ likes", self.post.likeCount];
+    self.likeLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count];
+    if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
+        [self.heartButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];
+    } else {
+        [self.heartButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = NSDateFormatterMediumStyle;
@@ -41,6 +47,19 @@
     _post = post;
 }
 
+- (IBAction)onLike:(id)sender {
+    NSLog(@"in");
+    if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
+        self.likeLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count - 1];
+        [self.heartButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
+        [self.post unlike:PFUser.currentUser.objectId];
+    } else {
+        NSLog(@"unliking");
+        self.likeLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count + 1];
+        [self.heartButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];
+        [self.post like:PFUser.currentUser.objectId];
+    }
+}
 
 #pragma mark - Navigation
 

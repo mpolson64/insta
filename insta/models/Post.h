@@ -19,8 +19,12 @@
 @property (nonatomic, strong) NSNumber *likeCount;
 @property (nonatomic, strong) NSNumber *commentCount;
 @property (nonatomic, strong) NSMutableArray *comments;
+@property (nonatomic, strong) NSMutableArray *likedBy;
+
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 - (void) makeComment:(NSString *)comment withUsername:(NSString *)username;
+- (void)like:(NSString *)objectId;
+- (void)unlike:(NSString *)objectId;
 
 @end
