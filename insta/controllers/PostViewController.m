@@ -36,6 +36,12 @@
     dateFormatter.timeStyle = NSDateFormatterNoStyle;
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     self.timestampLabel.text = [dateFormatter stringFromDate:self.post.createdAt];
+    
+    UITapGestureRecognizer *imageTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didDoubleTapImage:)];
+    imageTapGestureRecognizer.numberOfTapsRequired = 2;
+    [self.postImageView addGestureRecognizer:imageTapGestureRecognizer];
+    [self.postImageView setUserInteractionEnabled:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +54,14 @@
 }
 
 - (IBAction)onLike:(id)sender {
+    [self toggleLike];
+}
+
+- (void) didDoubleTapImage:(UITapGestureRecognizer *)sender{
+    [self toggleLike];
+}
+
+- (void) toggleLike {
     if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
         self.likeLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count - 1];
         [self.heartButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];

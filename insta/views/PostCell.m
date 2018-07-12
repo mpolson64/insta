@@ -37,7 +37,12 @@
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
     }
 }
+
 - (IBAction)onLike:(id)sender {
+    [self toggleLike];
+}
+
+- (void) toggleLike {
     if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
         self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count - 1];
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
