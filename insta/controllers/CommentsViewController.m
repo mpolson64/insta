@@ -33,6 +33,7 @@
 - (IBAction)onSubmit:(id)sender {
     [self.post makeComment:self.composeCommentTextView.text withUsername:PFUser.currentUser.username];
     self.composeCommentTextView.text = @"";
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

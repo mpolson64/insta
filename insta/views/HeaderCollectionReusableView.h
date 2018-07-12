@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse.h"
 
 @interface HeaderCollectionReusableView : UICollectionReusableView
 @property (weak, nonatomic) IBOutlet UIImageView *profPicImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
-@property (weak, nonatomic) IBOutlet UILabel *postsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *followersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *followingLabel;
 
+@property (strong, nonatomic) PFUser *user;
 @end
