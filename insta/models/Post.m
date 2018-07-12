@@ -17,6 +17,7 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic comments;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -30,6 +31,7 @@
     newPost.caption = caption;
     newPost.likeCount = [NSNumber numberWithUnsignedInteger:arc4random_uniform(100)];
     newPost.commentCount = @(0);
+    newPost.comments = [NSMutableArray new];
     
     [newPost saveInBackgroundWithBlock: completion];
 }
@@ -48,6 +50,11 @@
     }
     
     return [PFFile fileWithName:@"image.png" data:imageData];
+}
+
+- (void)makeComment:(NSString *)comment withUsername:(NSString *)username {
+    [self addObject:[NSString stringWithFormat:@"%@: %@", username, comment] forKey:@"comments"];
+    [self saveInBackground];
 }
 
 @end

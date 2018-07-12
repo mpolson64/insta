@@ -22,6 +22,8 @@
 		E8C0D9E020F56E8A00F68254 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9DF20F56E8A00F68254 /* PostCollectionViewCell.m */; };
 		E8C0D9E320F57E7A00F68254 /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9E220F57E7A00F68254 /* HeaderCollectionReusableView.m */; };
 		E8C0D9E820F6847000F68254 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9E720F6847000F68254 /* PostViewController.m */; };
+		E8C0D9EE20F6DC6800F68254 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9ED20F6DC6800F68254 /* CommentsViewController.m */; };
+		E8C0D9F120F6DD5B00F68254 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C0D9F020F6DD5B00F68254 /* CommentTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,10 @@
 		E8C0D9E220F57E7A00F68254 /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		E8C0D9E620F6847000F68254 /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		E8C0D9E720F6847000F68254 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		E8C0D9EC20F6DC6800F68254 /* CommentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		E8C0D9ED20F6DC6800F68254 /* CommentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		E8C0D9EF20F6DD5B00F68254 /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		E8C0D9F020F6DD5B00F68254 /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,8 @@
 				E8C0D9DC20F56E2800F68254 /* ProfileViewController.m */,
 				E8C0D9E620F6847000F68254 /* PostViewController.h */,
 				E8C0D9E720F6847000F68254 /* PostViewController.m */,
+				E8C0D9EC20F6DC6800F68254 /* CommentsViewController.h */,
+				E8C0D9ED20F6DC6800F68254 /* CommentsViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -155,6 +163,8 @@
 				E8C0D9DF20F56E8A00F68254 /* PostCollectionViewCell.m */,
 				E8C0D9E120F57E7A00F68254 /* HeaderCollectionReusableView.h */,
 				E8C0D9E220F57E7A00F68254 /* HeaderCollectionReusableView.m */,
+				E8C0D9EF20F6DD5B00F68254 /* CommentTableViewCell.h */,
+				E8C0D9F020F6DD5B00F68254 /* CommentTableViewCell.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -279,11 +289,13 @@
 				E8C0D9E320F57E7A00F68254 /* HeaderCollectionReusableView.m in Sources */,
 				E87BD0E320F417E30067C6AE /* LoginViewController.m in Sources */,
 				E87BD0ED20F42A490067C6AE /* Post.m in Sources */,
+				E8C0D9F120F6DD5B00F68254 /* CommentTableViewCell.m in Sources */,
 				E8C0D9DD20F56E2800F68254 /* ProfileViewController.m in Sources */,
 				E87BD0D720F412A70067C6AE /* main.m in Sources */,
 				E87BD0E620F41E2F0067C6AE /* FeedViewController.m in Sources */,
 				E8C0D9E020F56E8A00F68254 /* PostCollectionViewCell.m in Sources */,
 				E87BD0F720F4389D0067C6AE /* PostCell.m in Sources */,
+				E8C0D9EE20F6DC6800F68254 /* CommentsViewController.m in Sources */,
 				E8C0D9E820F6847000F68254 /* PostViewController.m in Sources */,
 				E87BD0E920F427AA0067C6AE /* ComposeViewController.m in Sources */,
 				E87BD0C920F412A60067C6AE /* AppDelegate.m in Sources */,

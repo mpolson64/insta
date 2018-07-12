@@ -21,4 +21,10 @@
     // Configure the view for the selected state
 }
 
+- (void)setComment:(NSString *)comment {
+    _comment = comment;
+    
+    self.commentLabel.text = comment;
+}
+
 @end
