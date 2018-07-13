@@ -32,7 +32,7 @@
     self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", post.likedBy.count];
     self.commentsLabel.text = [NSString stringWithFormat:@"%lu comments", post.comments.count];
     
-    if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
+    if([self.post.likedBy containsObject:PFUser.currentUser.username]) {
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];
     } else {
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
@@ -50,14 +50,14 @@
 }
 
 - (void) toggleLike {
-    if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
+    if([self.post.likedBy containsObject:PFUser.currentUser.username]) {
         self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count - 1];
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
-        [self.post unlike:PFUser.currentUser.objectId];
+        [self.post unlike:PFUser.currentUser.username];
     } else {
         self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count + 1];
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];
-        [self.post like:PFUser.currentUser.objectId];
+        [self.post like:PFUser.currentUser.username];
     }
 }
 
