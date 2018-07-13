@@ -63,9 +63,6 @@
     PFUser.currentUser[@"bio"] = self.bioTextView.text;
 //    PFUser.currentUser[@"profPic"] = [PFFile fileWithData: UIImageJPEGRepresentation(self.selectedImage, 1.0)];
     [PFUser.currentUser saveInBackground];
-    [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"Dismissed");
-    }];
 }
 
 
