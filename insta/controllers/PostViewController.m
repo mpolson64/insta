@@ -11,6 +11,7 @@
 
 @interface PostViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
+@property (weak, nonatomic) IBOutlet PFImageView *profPicImageView;
 
 @end
 
@@ -41,6 +42,11 @@
     imageTapGestureRecognizer.numberOfTapsRequired = 2;
     [self.postImageView addGestureRecognizer:imageTapGestureRecognizer];
     [self.postImageView setUserInteractionEnabled:YES];
+    
+    if(self.post.author[@"profPic"]) {
+        self.profPicImageView.file = self.post.author[@"profPic"];
+        [self.profPicImageView loadInBackground];
+    }
     
 }
 
