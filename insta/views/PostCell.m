@@ -30,6 +30,7 @@
     self.nameLabel.text = [NSString stringWithFormat:@"@%@", post.author.username];
     self.captionLabel.text = post.caption;
     self.likesLabel.text = [NSString stringWithFormat:@"%lu likes", post.likedBy.count];
+    self.commentsLabel.text = [NSString stringWithFormat:@"%lu comments", post.comments.count];
     
     if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-1-240"] forState:UIControlStateNormal];

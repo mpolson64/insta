@@ -13,6 +13,7 @@
 @interface PostViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
 @property (weak, nonatomic) IBOutlet PFImageView *profPicImageView;
+@property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 
 @end
 
@@ -52,6 +53,8 @@
         self.profPicImageView.file = self.post.author[@"profPic"];
         [self.profPicImageView loadInBackground];
     }
+    
+    [self.commentsButton setTitle:[NSString stringWithFormat:@"See %lu comments", self.post.comments.count] forState:UIControlStateNormal];
     
 }
 
