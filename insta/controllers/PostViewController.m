@@ -54,7 +54,13 @@
         [self.profPicImageView loadInBackground];
     }
     
-    [self.commentsButton setTitle:[NSString stringWithFormat:@"See %lu comments", self.post.comments.count] forState:UIControlStateNormal];
+    NSString *buttonText = @"";
+    if(self.post.comments.count == 0) {
+        buttonText = @"Comment";
+    } else {
+        buttonText = [NSString stringWithFormat:@"See %lu comments", self.post.comments.count];
+    }
+    [self.commentsButton setTitle:buttonText forState:UIControlStateNormal];
     
 }
 
