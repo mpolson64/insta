@@ -56,6 +56,8 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     HeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ProfileHeader" forIndexPath:indexPath];
     
+    header.user = PFUser.currentUser;
+    
     return header;
 }
 
@@ -78,8 +80,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller. if([sender isKindOfClass:[PostCell class]]) {
-    PostViewController *postViewController = [segue destinationViewController];
-    postViewController.post = self.posts[[self.collectionView indexPathForCell:sender].item];
+    if([sender isKindOfClass:[PostCollectionViewCell class]]) {
+        PostViewController *postViewController = [segue destinationViewController];
+        postViewController.post = self.posts[[self.collectionView indexPathForCell:sender].item];
+    } else if([sender isKindOfClass:[UIButton class]]) {
+        
+    }
 }
 
 

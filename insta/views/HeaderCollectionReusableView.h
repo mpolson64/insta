@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse.h"
+#import "ParseUI.h"
 
 @interface HeaderCollectionReusableView : UICollectionReusableView
-@property (weak, nonatomic) IBOutlet UIImageView *profPicImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *profPicImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 
