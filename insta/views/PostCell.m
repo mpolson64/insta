@@ -36,6 +36,13 @@
     } else {
         [self.likeButton setImage:[UIImage imageNamed:@"iconmonstr-favorite-2-240"] forState:UIControlStateNormal];
     }
+    
+    NSLog(@"%@", post.author);
+    if(post.author[@"profPic"]) {
+        self.profPicImage.file = post.author[@"profPic"];
+        [self.profPicImage loadInBackground];
+    }
+    
 }
 
 - (IBAction)onLike:(id)sender {
