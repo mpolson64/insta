@@ -186,6 +186,7 @@
                         <outlet property="postImageView" destination="vtg-Gf-Izd" id="1cl-1g-x0G"/>
                         <outlet property="profPicImageView" destination="lLF-ex-bZ5" id="XqC-mO-fuf"/>
                         <outlet property="timestampLabel" destination="VNN-VP-6Bn" id="gEM-Dp-31i"/>
+                        <segue destination="3By-Tm-JAs" kind="show" identifier="toProfile" id="MN9-PB-iZO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASC-FH-TcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -693,6 +694,7 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MN9-PB-iZO"/>
         <segue reference="wCX-Ib-uxu"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,7 +23,14 @@
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
     
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
@@ -61,7 +68,7 @@
 
 - (IBAction)onSave:(id)sender {
     PFUser.currentUser[@"bio"] = self.bioTextView.text;
-//    PFUser.currentUser[@"profPic"] = [PFFile fileWithData: UIImageJPEGRepresentation(self.selectedImage, 1.0)];
+    PFUser.currentUser[@"profPic"] = [PFFile fileWithData: UIImageJPEGRepresentation(self.selectedImage, 1.0)];
     [PFUser.currentUser saveInBackground];
 }
 

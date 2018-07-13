@@ -8,6 +8,7 @@
 
 #import "PostViewController.h"
 #import "CommentsViewController.h"
+#import "ProfileViewController.h"
 
 @interface PostViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
@@ -43,6 +44,10 @@
     [self.postImageView addGestureRecognizer:imageTapGestureRecognizer];
     [self.postImageView setUserInteractionEnabled:YES];
     
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapName:)];
+    [self.nameLabel addGestureRecognizer:profileTapGestureRecognizer];
+    [self.nameLabel setUserInteractionEnabled:YES];
+    
     if(self.post.author[@"profPic"]) {
         self.profPicImageView.file = self.post.author[@"profPic"];
         [self.profPicImageView loadInBackground];
@@ -67,6 +72,10 @@
     [self toggleLike];
 }
 
+- (void)didTapName:(UITapGestureRecognizer *)sender {
+    [self performSegueWithIdentifier:@"toProfile" sender:sender];
+}
+
 - (void) toggleLike {
     if([self.post.likedBy containsObject:PFUser.currentUser.objectId]) {
         self.likeLabel.text = [NSString stringWithFormat:@"%lu likes", self.post.likedBy.count - 1];
@@ -86,6 +95,10 @@
     if([sender isKindOfClass:[UIButton class]]) {
         CommentsViewController *commentsViewController = [segue destinationViewController];
         commentsViewController.post = self.post;
+    } else if([sender isKindOfClass:[UITapGestureRecognizer class]]) {
+        NSLog(@"yes");
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.user = self.post.author;
     }
 }
 

@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if(!self.user) self.user = PFUser.currentUser;
+    
     // Do any additional setup after loading the view.
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -33,7 +35,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey:@"author"];
-    [query whereKey:@"author" equalTo:PFUser.currentUser];
+    [query whereKey:@"author" equalTo:self.user];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     
@@ -56,7 +58,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     HeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ProfileHeader" forIndexPath:indexPath];
     
-    header.user = PFUser.currentUser;
+    header.user = self.user;
     
     return header;
 }
@@ -83,8 +85,6 @@
     if([sender isKindOfClass:[PostCollectionViewCell class]]) {
         PostViewController *postViewController = [segue destinationViewController];
         postViewController.post = self.posts[[self.collectionView indexPathForCell:sender].item];
-    } else if([sender isKindOfClass:[UIButton class]]) {
-        
     }
 }
 

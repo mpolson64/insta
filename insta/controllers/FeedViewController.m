@@ -84,7 +84,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
     if([sender isKindOfClass:[PostCell class]]) {
         PostViewController *postViewController = [segue destinationViewController];
         postViewController.post = self.posts[[self.tableView indexPathForCell:sender].row];
