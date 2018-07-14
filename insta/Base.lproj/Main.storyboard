@@ -56,6 +56,10 @@
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CzG-zu-60L"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InstagramLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uA2-pi-tWD">
+                                <rect key="frame" x="0.0" y="138" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -69,7 +73,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="fuM-7p-x4g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1193" y="-863"/>
+            <point key="canvasLocation" x="1192.8" y="-863.1184407796103"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="w6e-yT-uRV">
@@ -711,6 +715,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="InstagramLogo" width="3300" height="936"/>
         <image name="feed_tab" width="25" height="25"/>
         <image name="iconmonstr-favorite-1-240" width="240" height="240"/>
         <image name="iconmonstr-favorite-2-240" width="240" height="240"/>
